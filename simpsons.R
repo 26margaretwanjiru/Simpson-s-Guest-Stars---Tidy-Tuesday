@@ -2,8 +2,6 @@
 #Load packages
 
 library(tidyverse)
-library(ggthemes)
-
 
 #Load the data
 
@@ -22,6 +20,7 @@ str(guest_role)
 
 
 #Load the downloaded simpson's images
+(Link for the images - https://www.google.com/search?q=the+simpsons+characters&stick=H4sIAAAAAAAAAONgFuLQz9U3ME82N1KCs7RkspOt9EvKgCi-oCg_vSgx1yo5I7EoMbkktah4Eat4SUaqQnFmbkFxfl6xAkJmBysjAKTfX1VRAAAA&sa=X&ved=2ahUKEwilsIDI5KXkAhUmx4UKHRY2BGcQMSgAMDZ6BAgSEAE&biw=1235&bih=590)
 
 rabbi <-jpeg::readJPEG("C:/Users/MARGRET/Downloads/rabbi.jpg") 
 a <- grid::rasterGrob(rabbi, interpolate = T) 
@@ -72,8 +71,6 @@ count_guest <- guest_role%>%
   )+
   theme(axis.text.x = element_text(colour = "black", face = "bold"),
         axis.text.y = element_text(colour = "black", face = "bold"))
-
-count_guest
 
 
 ggsave("count_guest.png", count_guest, height=20, width=40, units="cm")
